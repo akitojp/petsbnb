@@ -49,13 +49,15 @@ class ListingsController < ApplicationController
   end
 
   def photos
-    @photo  = Photo.new
+    @photo = Photo.new
   end
 
   def calendar
   end
 
   def bankaccount
+    @user = @listing.user
+    session[:listing_id] = @listing.id
   end
 
   def publish
