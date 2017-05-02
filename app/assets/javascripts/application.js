@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery-ui/widgets/datepicker
 //= require toastr
 //= require dropzone
 //= require jquery_ujs
