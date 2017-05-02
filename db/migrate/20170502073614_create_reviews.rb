@@ -9,7 +9,7 @@ class CreateReviews < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_foreign_key :reviews, :listings
-    add_foreign_key :reviews, :userss
+    add_foreign_key :reviews, :users
     
   end
 end
