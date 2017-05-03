@@ -7,15 +7,16 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
 //
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
-//= require jquery-ui/widgets/datepicker
-//= require toastr
 //= require dropzone
-//= require jquery_ujs
+//= require bootstrap-sprockets
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-ja
 //= require private_pub
+//= require toastr
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .

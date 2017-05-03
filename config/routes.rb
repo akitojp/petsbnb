@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   resources :listings
 
   root :to => 'pages#index'
@@ -9,11 +9,11 @@ Rails.application.routes.draw do
 
   resources :photos, only: [:create, :destroy] do
     collection do
-      get :list
+      get :list 
     end
   end
 
-  resources :listings do
+  resources :listings do 
     resources :reservations, only: [:new, :create]
   end
 
@@ -49,5 +49,6 @@ Rails.application.routes.draw do
   get '/search' => 'pages#search'
 
   get '/ajaxsearch' => 'pages#ajaxsearch'
-
+  
 end
+

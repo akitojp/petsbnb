@@ -1,13 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "dropzone/dropzone";
 @import "jquery-ui/datepicker";
 @import "jquery-bootstrap-datepicker";
-
-
 
 .jumbotron {
   padding-top: 0px;
@@ -137,7 +133,7 @@
 .profile-full {
         width: 100% !important;
         height: 180px !important;
-    }
+    }    
 }
 
 .btn-full {
@@ -205,10 +201,10 @@
       width: 100%;
   }
   .dropzone .dz-preview .dz-image {
-    width: 100%;
+    width: 100%;   
   }
   .dropzone .dz-preview .dz-image img {
-    height: 120px;
+    height: 120px;    
   }
 }
 
@@ -251,7 +247,7 @@ span.listing-title {
 .row-table{
   display: table;
   table-layout: fixed;
-  width: 100%;
+  width: 100%; 
 }
 
 .col-middle{
@@ -392,7 +388,7 @@ li#nav-publish a{
 
 // Top-search-fieldのcss
 .top-search-field {
-  height: 90px;
+  height: 90px; 
   background: #fff;
   position: absolute;
   bottom: 0;

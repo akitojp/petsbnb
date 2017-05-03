@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+  
   def new
     @listing = Listing.find(params[:listing_id])
     @user = current_user
@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservations = current_user.reservations.where(self_booking: nil)
+    @reservations = current_user.reservations.where(self_booking: nil) 
   end
 
   def reserved
@@ -28,14 +28,14 @@ class ReservationsController < ApplicationController
 
       # 今まで、自分自身で予約した予約を取り出す
       reservationsByme = @listing.reservations.where(user_id: current_user.id)
-
+      
       # 以前、自分自身で選択した日付
       oldSelectedDates = []
 
       # 以前、自分自身で予約した"予約の日付"を配列に入れていく
       reservationsByme.each do |reservation|
         oldSelectedDates.push(reservation.start_date)
-      end
+      end  
 
       # 以前の自身で選択した日付の予約を全て消す
       if oldSelectedDates
@@ -52,14 +52,14 @@ class ReservationsController < ApplicationController
           current_user.reservations.create(:listing_id => @listing.id,:start_date => date,:end_date => date,:self_booking => true)
         end
       end
-
-      redirect_to :back, notice: "更新しました。"
+      
+      redirect_to :back, notice: "更新しました。" 
 
     else   #他人の部屋の予約作成とStripeのpayアクションの実行
       # Find the user to pay.
       user = @listing.user
 
-      # Charge
+      # Charge 
       amount = params[:reservation][:total_price]
 
       #fee
@@ -80,7 +80,7 @@ class ReservationsController < ApplicationController
         # connected account's user id as the destination so that
         # the charge is transferred to their account.
         charge_attrs[:destination] = user.stripe_user_id
-
+        
         charge = Stripe::Charge.create( charge_attrs )
 
         #have to edit view template to show html in flash
@@ -92,8 +92,8 @@ class ReservationsController < ApplicationController
       end
 
       # 予約をパラメーター付与して作成
-      @reservation = current_user.reservations.create(reservation_params)
-      redirect_to @reservation.listing, notice: "予約が完了しました。"
+      @reservation = current_user.reservations.create(reservation_params)          
+      redirect_to @reservation.listing, notice: "予約が完了しました。" 
 
     end
   end
@@ -127,7 +127,7 @@ class ReservationsController < ApplicationController
       listing = Listing.find(params[:listing_id])
 
       check = listing.reservations.where("? < start_date AND end_date < ?",start_date,end_date)
-      check.size > 0? true : false
+      check.size > 0? true : false 
     end
 
 end

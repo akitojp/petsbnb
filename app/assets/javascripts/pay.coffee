@@ -34,6 +34,7 @@ $(document).ready ->
         submitting = true
         form.find('input[name=token]').val( token.id )
         form.get(0).submit()
+        
   createHandler()
 
   payButton.click ( e ) ->

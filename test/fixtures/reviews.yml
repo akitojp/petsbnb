@@ -4,10 +4,10 @@ one:
   description: MyText
   rate: 1
   listing_id: 
-  usr_id: 
+  user_id: 
 
 two:
   description: MyText
   rate: 1
   listing_id: 
-  usr_id: 
+  user_id: 

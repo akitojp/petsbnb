@@ -1,8 +1,8 @@
 class CreateReservations < ActiveRecord::Migration
   def change
     create_table :reservations do |t|
-      t.references :user, index: true
-      t.references :listing, index: true
+      t.references :user, index: true, foreign_key: true
+      t.references :listing, index: true, foreign_key: true
       t.datetime :start_date
       t.datetime :end_date
       t.integer :price_pernight
@@ -10,7 +10,5 @@ class CreateReservations < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :reservations, :users
-    add_foreign_key :reservations, :listings
   end
 end

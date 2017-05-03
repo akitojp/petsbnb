@@ -24,13 +24,13 @@
             <p><%= @end_date %></p>
           </div>
         </div>
-
+ 
 
         <!--Stripe order and credit form -->
 
         <!-- Send to reservations#create action -->
         <%= form_for([@listing, @listing.reservations.new]) do |f| %>
-
+          
           <%= hidden_field_tag :token %>
 
           <!-- hashでまとめて送れないから、またパラメータを作る -->
@@ -43,22 +43,22 @@
           <div class='indicator'></div>
           <div class="row">
             <div class="text-center">
-              <button class='btn btn-danger btn-wide pay-button'><%= @total_price %>円を支払って予約を完了する</button>
+              <button class='btn btn-danger btn-wide pay-button'><%= @total_price %>円を支払って予約を完了する</button>  
 
             </div>
-
+              
           </div>
-
+            
         <% end %>
-      </div>
-    </div>
+      </div>     
+    </div>    
   </div>
 </div>
 
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
-セッションみたいなもの。
+<!-- セッションみたいなもの。 -->
 <script>
   // You can select to pay either directly or via the platform, so
   // we need both publishable keys here.

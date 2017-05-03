@@ -8,7 +8,6 @@ class ConversationsController < ApplicationController
       @conversations = Conversation.involving(current_user)
     end
 
-
     def create
       if Conversation.between(params[:sender_id],params[:recipient_id]).present?
         # Conversationテーブルの先頭のレコードを取得する
