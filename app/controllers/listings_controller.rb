@@ -9,10 +9,11 @@ class ListingsController < ApplicationController
   def show
     @photos = @listing.photos
 
+
     # 今のユーザーがこのリスティングを予約しているか否か
     @currentUserBooking = Reservation.where("listing_id = ? AND user_id = ?",@listing.id,current_user.id).present? if current_user
 
-    @reviews =  @listing.reviews
+    @reviews = @listing.reviews
 
     @currentUserReview = @reviews.find_by(user_id:  current_user.id) if current_user
   end
@@ -75,6 +76,7 @@ class ListingsController < ApplicationController
     @listing.update(not_checked: params[:not_checked])
     render :nothing => true
   end
+
 
 
   private

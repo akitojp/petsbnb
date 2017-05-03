@@ -218,7 +218,7 @@
                                     <%= link_to listing.listing_title, listing %><br>
                                 </div>
                                 <div class="col-md-3 col-xs-3">
-                                    <%= image_tag listing.user.image,class:"img-circle profile-1" %>
+                                    <!-- <%= image_tag listing.user.image,class:"img-circle profile-1" %> -->
                                 </div>
                                 <div class="price-card">
                                     <%= listing.price_pernight %> 円
@@ -265,7 +265,7 @@ function initMap() {
 
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1BoiSo2jL950_AuFzV-f9ETgKn0uQl2I&signed_in=true&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEkpa2JV5XjNYU20hf3kL9M7mgvd71owU&signed_in=true&callback=initMap">
 </script>
 
 <script>
@@ -423,12 +423,4 @@ $(function() {
     }
   });
 });
-</script>
-
-<script>
-  $('#average_star_rate').raty({
-      path: '/assets',
-      readOnly: true,
-      score: <%= @listing.average_star_rate %>
-  });
 </script>

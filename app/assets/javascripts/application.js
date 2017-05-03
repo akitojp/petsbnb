@@ -16,5 +16,6 @@
 //= require toastr
 //= require dropzone
 //= require jquery_ujs
+//= require private_pub
 //= require turbolinks
 //= require_tree .

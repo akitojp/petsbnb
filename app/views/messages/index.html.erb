@@ -18,15 +18,11 @@
 
   <!-- Search Form -->
   <div class="top-search-field">
-    <%= form_tag search_path, method: :get do %>
+    <%= form_tag "", method: :get do %>
       <div class="row">
         <div class="container">
-
-          <%= hidden_field_tag :lat %>
-          <%= hidden_field_tag :lng %>
-
           <div class="col-md-7 col-xs-10" style="padding-right: 0px">
-            <%= text_field_tag :search, params[:search], placeholder: "希望の場所はどこですか？", class: "form-control",id:"top-search-form" %>
+            <%= text_field_tag :search, params[:search], placeholder: "希望の場所はどこですか？", class: "form-control" %>
           </div>
 
           <div class="col-md-2 hidden-xs hidden-sm">
@@ -102,58 +98,3 @@
     </div>
   </section>
 </div>
-
-<%= render 'pages/footer' %>
-
-<!-- datepickerのスクリプト -->
-<script>
-  $(function() {
-    $("#start_date").datepicker({
-      dateFormat: 'dd-mm-yy',
-      minDate: 0,
-      maxDate: '3m',
-      onSelect: function(selected) {
-        $('#end_date').datepicker("option", "minDate", selected);
-        $('#end_date').attr('disabled', false);
-      }
-    });
-
-    $("#end_date").datepicker({
-      dateFormat: 'dd-mm-yy',
-      minDate: 0,
-      maxDate: '3m',
-      onSelect: function(selected) {
-        $('#start_date').datepicker("option", "maxDate", selected);
-      }
-    });
-  })
-</script>
-
-<script>
-function init() {
-
-  var input = /** @type {!HTMLInputElement} */(
-      document.getElementById('top-search-form'));
-
-  var autocomplete = new google.maps.places.Autocomplete(input);
-
-  autocomplete.addListener('place_changed', function() {
-
-    var place = autocomplete.getPlace();
-    var lat = place.geometry.location.lat();
-    var lng = place.geometry.location.lng();
-
-    document.getElementById('lat').value = lat ;
-    document.getElementById('lng').value = lng ;
-
-    if (!place.geometry) {
-      window.alert("Autocomplete's returned place contains no geometry");
-      return;
-    }
-
-  });
-}
-
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEkpa2JV5XjNYU20hf3kL9M7mgvd71owU&signed_in=true&libraries=places&callback=init"
-    async defer></script>

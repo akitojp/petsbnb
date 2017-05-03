@@ -25,6 +25,9 @@ gem 'jquery-ui-rails'
 gem 'stripe'
 gem 'stripe_event'
 gem 'rest-client'
+gem "private_pub"
+gem "thin"
+gem 'ransack'
 
 group :production do
   gem 'pg'
