@@ -8,7 +8,7 @@
 .jumbotron {
   padding-top: 0px;
   // 背景画像を暗くする
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05) ), url(person-845325_1920.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05) ), url(person-845325_1922.jpg);
   background-size: cover;
   // 背景画像の位置を決める
   background-position: 50% 50%;
@@ -133,7 +133,7 @@
 .profile-full {
         width: 100% !important;
         height: 180px !important;
-    }    
+    }
 }
 
 .btn-full {
@@ -201,10 +201,10 @@
       width: 100%;
   }
   .dropzone .dz-preview .dz-image {
-    width: 100%;   
+    width: 100%;
   }
   .dropzone .dz-preview .dz-image img {
-    height: 120px;    
+    height: 120px;
   }
 }
 
@@ -247,7 +247,7 @@ span.listing-title {
 .row-table{
   display: table;
   table-layout: fixed;
-  width: 100%; 
+  width: 100%;
 }
 
 .col-middle{
@@ -388,7 +388,7 @@ li#nav-publish a{
 
 // Top-search-fieldのcss
 .top-search-field {
-  height: 90px; 
+  height: 90px;
   background: #fff;
   position: absolute;
   bottom: 0;

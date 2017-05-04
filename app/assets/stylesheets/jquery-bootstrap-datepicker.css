@@ -114,3 +114,9 @@
 .ui-datepicker .ui-datepicker-current-day {
     background-color: #d9534f;
 }
+
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+  color: #ccc;
+}
